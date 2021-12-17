@@ -6,7 +6,13 @@ file2 = pd.read_excel('Files/Archivo2.xlsx', header = None)
 file3 = pd.DataFrame()
 file4 = pd.DataFrame()
 
-if(not file1.equals(file2)):
+for i in  file1.index:
+    if((file1[0][i]).lower() == (file2 [0][i]).lower()):
+        sameFiles = True
+    else:
+        sameFiles = False
+
+if(not file1.equals(file2) and sameFiles == False):
     if(len(file2.index) < len(file1.index)):
         print("No se puede comparar uno a uno porque el Archivo 2 tiene menos datos que el Archivo 1")
 
