@@ -13,8 +13,10 @@ if(not file1.equals(file2)):
             file3 = file3.append({'Archivo 1' : file1[0][i], 'Archivo 2' : file2[0][i]}, ignore_index = True)
             file3.to_excel(writer1, "Diferente", index = False)
             writer1.save()
-            print(file3)
-    
+        
+    if(not file3.empty):
+        print(file3)
+        
     if(len(file2.index) > len(file1.index)):
         writer2 = ExcelWriter('Files/Archivo4.xlsx')
         for j in range(len(file1.index), len(file2.index)):
@@ -22,6 +24,6 @@ if(not file1.equals(file2)):
             file4.to_excel(writer2, "Inexistente", index = False)
         writer2.save()
         print(file4)
-       
+            
 else:
     print("Los archivos son iguales :D")
