@@ -12,14 +12,8 @@ file4 = pd.DataFrame()
 #Hallamos el minimo número de filas de los archivos
 min = min(len(file1.index), len(file2.index))
 
-#Comparamos la igualdad de las celdas en minúsculas
-for i in range(min):
-    if((file1[0][i]).lower() == (file2[0][i]).lower()):
-        sameFiles = True
-    else:
-        sameFiles = False
-
-if(not(file1.equals(file2) and sameFiles)):
+#Comparando archivos en minúsculas
+if(not(file1[0].str.lower()).equals(file2[0].str.lower())):
     #Se crea el archivo 3
     for i in range(min):
         if((file1[0][i]).lower() != (file2 [0][i]).lower()):                                
