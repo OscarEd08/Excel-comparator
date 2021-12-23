@@ -26,7 +26,7 @@ if not sameFiles:
             writer1.save()
     
     if file3.empty:
-        print("No hay diferencias en las primeras", min, "filas")
+        print("El Archivo 2 tiene",len(file2.index),"filas y no hay diferencias en las primeras",min,"filas")
     else:
         print(file3)
 
